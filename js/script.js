@@ -77,6 +77,12 @@ function gameEngine() {
         highScoreBox.innerHTML = "High Score: " + highScore;
     }
     scoreBox.innerHTML = "Score: " + score;
+
+    // Increase the speed
+    if (score % 5 === 0) {
+      speed++;
+    }
+
     snakeArray.unshift({
       x: snakeArray[0].x + inputDirection.x,
       y: snakeArray[0].y + inputDirection.y,

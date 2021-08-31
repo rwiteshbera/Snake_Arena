@@ -58,3 +58,15 @@ body{
     border: 1px solid black;
     border-radius: 50%;
 }
+
+#snakeImage{
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    background-image: url("../images/snake.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 180px;
+}
