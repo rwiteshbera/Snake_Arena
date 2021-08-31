@@ -24,6 +24,14 @@ body{
     font-family: 'Roboto Slab', serif;
 }
 
+#highScoreBox{
+    position: absolute;
+    top: 60px;    
+    right: 20px;
+    font-size: 1.5rem;
+    font-family: 'Roboto Slab', serif;
+}
+
 #board {
     background: linear-gradient(rgb(114, 194, 114), rgb(255, 255, 124));
     border: 2px solid black;

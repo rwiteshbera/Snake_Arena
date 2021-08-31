@@ -70,6 +70,12 @@ function gameEngine() {
   if (snakeArray[0].y === food.y && snakeArray[0].x === food.x) {
     eat.play();
     score++;
+    if(score>highScore){
+        // set the high score
+        highScore = score;
+        localStorage.setItem("highScore",score);
+        highScoreBox.innerHTML = "High Score: " + highScore;
+    }
     scoreBox.innerHTML = "Score: " + score;
     snakeArray.unshift({
       x: snakeArray[0].x + inputDirection.x,
@@ -117,8 +123,16 @@ function gameEngine() {
   board.appendChild(foodElement);
 }
 
-window.requestAnimationFrame(main);
+// Display the score
+let highScore = localStorage.getItem("highScore");
+if (highScore === null) {
+    localStorage.setItem("highScore", 0);
+}
+else {
+    highScoreBox.innerHTML = "High Score: " + highScore;
+}  // Display the high score
 
+window.requestAnimationFrame(main);
 window.addEventListener("keydown", (e) => {
   inputDirection = { x: 0, y: 1 }; // Start the game
   backgroundMusic.play();
